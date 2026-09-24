@@ -1,0 +1,48 @@
+name: RentbutikAdmin
+options:
+  bundleIdPrefix: com.rentbutik
+  deploymentTarget:
+    iOS: "27.0"
+  developmentLanguage: az
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    TARGETED_DEVICE_FAMILY: "1"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+packages:
+  AdminKit:
+    path: Packages/AdminKit
+targets:
+  RentbutikAdmin:
+    type: application
+    platform: iOS
+    sources:
+      - App
+    dependencies:
+      - package: AdminKit
+        product: AdminFeatures
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rentbutik.admin
+        PRODUCT_NAME: Rentbutik Admin
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Rentbutik Admin
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_NSFaceIDUsageDescription: Face ID unlocks the admin app without typing your password.
+        INFOPLIST_KEY_CFBundleDevelopmentRegion: az
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_PREVIEWS: YES
+schemes:
+  RentbutikAdmin:
+    build:
+      targets:
+        RentbutikAdmin: all
+    test:
+      targets:
+        - package: AdminKit/AdminDomainTests
