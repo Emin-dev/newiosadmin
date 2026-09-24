@@ -1,5 +1,7 @@
 # Parity checklist
 
+> Written for the first (SwiftUI) version. The web version in this repo has the same scope; Map and Statistics pages are not built yet in the web version. See docs/PLAN.md.
+
 Every feature of the old web panel must exist in this app. Sources:
 
 - Old panel code: `Emin-dev/rentbutik-admin` (20 pages, state on 17.07.2026).
